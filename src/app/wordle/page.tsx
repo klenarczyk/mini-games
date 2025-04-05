@@ -37,10 +37,10 @@ export default function Wordle() {
       return;
     }
 
-    if (!(await isValidWord(word))) {
-      setMessage("Enter a valid word!");
-      return;
-    }
+    // if (!(await isValidWord(word))) {
+    //   setMessage("Enter a valid word!");
+    //   return;
+    // }
 
     setWords((prevWords) => [...prevWords, word]);
     setAttempt((prev) => prev + 1);
@@ -66,7 +66,7 @@ export default function Wordle() {
     }
 
     setMessage("Keep Going!");
-  }, [word, answer, attempt]);
+  }, [word, words, answer, attempt]);
 
   const handleKeyPress = useCallback(
     async (event: KeyboardEvent) => {
