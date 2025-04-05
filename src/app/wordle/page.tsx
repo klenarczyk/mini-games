@@ -37,10 +37,10 @@ export default function Wordle() {
       return;
     }
 
-    // if (!(await isValidWord(word))) {
-    //   setMessage("Enter a valid word!");
-    //   return;
-    // }
+    if (!(await isValidWord(word))) {
+      setMessage("Enter a valid word!");
+      return;
+    }
 
     setWords((prevWords) => [...prevWords, word]);
     setAttempt((prev) => prev + 1);
